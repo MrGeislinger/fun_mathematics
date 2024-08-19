@@ -21,13 +21,13 @@ def get_div_func(n: int) -> Callable[[int, bool], int]:
 
 
 if __name__ == '__main__':
+    # base_number = 7
     # nums = [70, 98, 16, 700, 699]
-    nums = (str(number) for number in sys.argv[1:])
+    base_number = int(sys.argv[1])
+    nums = (int(number) for number in sys.argv[2:])
 
-    div7 = get_div_func(7)
-    div5 = get_div_func(5)
+    my_div = get_div_func(base_number)
     for n in nums:
         print(f'For {n}:')
-        print(f'\t{div7(n)}')
-        print(f'\t{div5(n)}')
+        print(f'\t{my_div(n)}')
     print('DONE')
